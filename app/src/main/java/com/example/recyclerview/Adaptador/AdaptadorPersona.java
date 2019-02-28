@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.recyclerview.Modelo.Persona;
 import com.example.recyclerview.R;
 
+import java.net.CookieHandler;
 import java.util.List;
 
 public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.viewHolder> {
@@ -31,9 +32,11 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.view
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorPersona.viewHolder viewHolder, int i) {
-        viewHolder.txtnombre.setText(lp.get(i).getNombre());
-        viewHolder.txtapellido.setText(lp.get(i).getApellido());
-        viewHolder.txtnombre.setText(String.valueOf(lp.get(i).getNombre()));
+        Persona p = lp.get(i);
+        viewHolder.txtnombre.setText(p.getNombre());
+        viewHolder.txtapellido.setText(p.getApellido());
+        viewHolder.txtedad.setText(String.valueOf(p.getNombre()));
+        viewHolder.txttelefono.setText(p.getTelefono());
 
     }
 
@@ -47,11 +50,13 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.view
         TextView txtnombre;
         TextView txtapellido;
         TextView txtedad;
+        TextView txttelefono;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             TextView txtnombre = itemView.findViewById(R.id.txtnombre);
             TextView txtapellido= itemView.findViewById(R.id.txtapellido);
             TextView txtedad= itemView.findViewById(R.id.txtedad);
+            TextView txttelefoo = itemView.findViewById(R.id.txtelefono);
 
         }
     }

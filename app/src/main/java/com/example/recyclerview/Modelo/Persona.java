@@ -6,12 +6,16 @@ public class Persona {
     private String Nombre;
     private String Apellido;
     private Integer Edad;
+    private String Telefono;
 
-    public Persona(Integer id, String nombre, String apellido, Integer edad) {
+
+
+    public Persona(Integer id, String nombre, String apellido, Integer edad, String telefono) {
         this.id = id;
         Nombre = nombre;
         Apellido = apellido;
         Edad = edad;
+        Telefono = telefono;
     }
 
     public Integer getId() {
@@ -44,5 +48,13 @@ public class Persona {
 
     public void setEdad(Integer edad) {
         Edad = edad;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        Telefono = telefono;
     }
 }

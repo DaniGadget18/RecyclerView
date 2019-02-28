@@ -21,6 +21,11 @@
         android:layout_height="wrap_content"
         android:text="Edad"
         android:id="@+id/txtedad"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono"
+        android:id="@+id/txtelefono"/>
 
 
 
