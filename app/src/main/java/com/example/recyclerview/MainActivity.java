@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,11 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Type tp = new TypeToken<List<Persona>>(){}.getType();
 
                 List<Persona> lp = g.fromJson(response.toString(),tp);
+                Log.d("js",response.toString());
 
                 AdaptadorPersona ap = new AdaptadorPersona(lp);
 
                 rv.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL,false));
                 rv.setAdapter(ap);
+
 
             }
         }, new Response.ErrorListener() {
