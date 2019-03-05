@@ -29,14 +29,14 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.view
     @NonNull
     @Override
     public AdaptadorPersona.viewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        Context context = parent.getContext();
-       LayoutInflater inflater = LayoutInflater.from(context);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.itemrcvd, viewGroup, false);
+        return new viewHolder(view);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdaptadorPersona.viewHolder viewHolder, final int i) {
-        Persona p = lp.get(i);
+        final Persona p = lp.get(i);
         viewHolder.txtnombre.setText(p.getNombre());
         viewHolder.txtapellido.setText(p.getApellido());
         viewHolder.txtedad.setText(String.valueOf(p.getNombre()));
@@ -45,14 +45,9 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.view
             @Override
             public void onClick(View view) {
                 Intent t = new Intent(Intent.ACTION_CALL);
-                t.setData(Uri.parse("tel: ", p.getTelefono()));
+                t.setData(Uri.parse("tel: " + p.getTelefono()));
             }
         });
-
-
-
-
-
     }
 
     @Override
@@ -72,6 +67,13 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.view
             TextView txtapellido= itemView.findViewById(R.id.txtapellido);
             TextView txtedad= itemView.findViewById(R.id.txtedad);
             TextView txttelefoo = itemView.findViewById(R.id.txtelefono);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
         }
     }

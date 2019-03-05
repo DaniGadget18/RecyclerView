@@ -45,13 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 Type tp = new TypeToken<List<Persona>>(){}.getType();
 
+                Log.d("Lista",response.toString());
                 List<Persona> lp = g.fromJson(response.toString(),tp);
-                Log.d("js",response.toString());
 
                 AdaptadorPersona ap = new AdaptadorPersona(lp);
 
-                rv.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL,false));
-                rv.setAdapter(ap);
+                rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                rv.setAdapter( new AdaptadorPersona(lp));
 
 
             }
